@@ -9,29 +9,28 @@ public class Program {
 		Scanner scan = new Scanner(System.in);
 		 Aluno al = new Aluno();
 		 
-		System.out.print("Student: ");
+		System.out.print("Aluno: ");
 		al.nome = scan.nextLine();
 
-		System.out.print("Enrollment: ");
+		System.out.print("Matricula: ");
 		al.matricula = scan.nextLine();
 		
-		System.out.print("Course: ");
+		System.out.print("Curso: ");
 		al.curso = scan.nextLine();
 		
         for(int i =0; i < al.disciplina.length; i++) {
-        	 System.out.println("Enter a " + (i+1) + "° subject: ");
+        	 System.out.println("Entre com " + (i+1) + "° disciplina: ");
         	 al.disciplina[i] = scan.nextLine();
         	
          }  
         
         for(int i = 0; i<al.notaDisciplina.length; i++) {
-        	System.out.println("Subject: " + al.disciplina[i]);
+        	System.out.println("Disciplina: " + al.disciplina[i]);
         	for(int j = 0; j < al.notaDisciplina[i].length; j++) {
-        		System.out.println("Enter " + (j+1) + "° note: ");
+        		System.out.println("Entre coma a" + (j+1) + "° nota: ");
         		al.notaDisciplina[i][j] = scan.nextDouble();
 
         	}
-        	
         }
         
         al.getInfo();

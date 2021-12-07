@@ -21,7 +21,7 @@ public class Aluno {
 	public void getNote() {
 		double s = 0;
 		for(int i =0; i<notaDisciplina.length; i++) {
-			System.out.println((i+1)+"° subject: " + disciplina[i]);
+			System.out.println((i+1)+"° Disciplina: " + disciplina[i]);
 			for(int j = 0; j < notaDisciplina[i].length; j++) {
 				System.out.print((j+1)+"° Nota: " + notaDisciplina[i][j] + "\n");
 				s += notaDisciplina[i][j]/3;
@@ -29,9 +29,9 @@ public class Aluno {
 			
 			System.out.println("Media: " + s);
 			if(s < 7) {
-				System.out.println("Reprovado");
+				System.out.println("Aluno Reprovado");
 			} else {
-				System.out.println("Aprovado");
+				System.out.println("Aluno Aprovado");
 			}
 		}
 	}
