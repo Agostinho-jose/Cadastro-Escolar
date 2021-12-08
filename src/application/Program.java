@@ -7,7 +7,8 @@ import intities.Aluno;
 public class Program {
 
 	public static void main(String[] args) {
-        Locale.setDefault(Locale.US);
+
+		Locale.setDefault(Locale.US);
 		Scanner scan = new Scanner(System.in);
 
 		System.out.print("Aluno: ");
@@ -19,28 +20,35 @@ public class Program {
 		System.out.print("Curso: ");
 		String curso = scan.nextLine();
 
-		String[] disciplina = new String[2];
+		System.out.print("Entre com quantidade de disciplina(s): ");
+		int quant = scan.nextInt();
+		scan.nextLine();
+		String[] disciplina = new String[quant];
+
 		for (int i = 0; i < disciplina.length; i++) {
-			System.out.println("Entre com " + (i + 1) + "° disciplina: ");
+			System.out.print("Entre com " + (i + 1) + "° disciplina: ");
 			String discp = scan.nextLine();
 			disciplina[i] = discp;
-
 		}
 
-		double[][] notaDisciplina = new double[2][3];
-		for(int i = 0; i < notaDisciplina.length; i++) {
-           System.out.println("Disciplina: " + disciplina[i]);
-        for(int j = 0; j < notaDisciplina[i].length; j++) {
-		   System.out.println("Entre com a " + (j + 1) + "° nota: ");
+		System.out.print("Entre com quantidade de nota(s) de cada disciplina(s): ");
+		int quantNotas = scan.nextInt(); //Variavel será setada na Classe Aluno, atributo mediaNotas;
+		
+		double[][] notaDisciplina = new double[quant][quantNotas];
+
+		for (int i = 0; i < notaDisciplina.length; i++) {
+			    System.out.println("Disciplina: " + disciplina[i]);
+			for (int j = 0; j < notaDisciplina[i].length; j++) {
+				System.out.print("Entre com a " + (j + 1) + "° nota: ");
 				double notas = scan.nextDouble();
 				notaDisciplina[i][j] = notas;
 			}
 		}
-       
-		Aluno aluno = new Aluno(nome, matricula, curso, disciplina, notaDisciplina);
-		
-		aluno.getInfo();
-		aluno.getNote();
 
+		Aluno aluno = new Aluno(nome, matricula, curso, disciplina, notaDisciplina, quantNotas);
+		aluno.imprimirInfo();
+		aluno.imprimirMedia();
+
+		scan.close();
 	}
 }
