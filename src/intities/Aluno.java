@@ -2,12 +2,25 @@ package intities;
 
 public class Aluno {
 	
-	String nome;
-	String matricula;
-	String curso;
-	String[] disciplina = new String[2];
-	double[][] notaDisciplina = new double[2][3];
+	private String nome;
+	private String matricula;
+	private String curso;
+	private String[] disciplina;
+	private double[][] notaDisciplina;
 	
+	public Aluno() {
+		super();
+	}
+
+	public Aluno(String nome, String matricula, String curso, String[] disciplina, double[][] notaDisciplina) {
+		super();
+		this.nome = nome;
+		this.matricula = matricula;
+		this.curso = curso;
+		this.disciplina = disciplina;
+		this.notaDisciplina = notaDisciplina;
+	}
+
 	public void getInfo() {
 		 System.out.println("Nome: " + nome
 					+", Matricula: " + matricula
