@@ -1,53 +1,30 @@
 package intities;
 
+import java.util.Date;
+
 public class Aluno {
 
-	private String nome;
-	private String matricula;
-	private String curso;
+	private Date date;
 	private String[] disciplina;
 	private double[][] notaDisciplina;
 	
 	//Atributos que recebe valor para divisão da média relacionado com quantidade de notas(quantNotas);
-	private int mediaNotas;
-
-	public Aluno() {
+	private Integer mediaNotas;
+	
+	public Aluno(Date date, String[] disciplina, double[][] notaDisciplina, Integer mediaNotas) {
 		super();
-	}
-
-	public Aluno(String nome, String matricula, String curso, String[] disciplina, double[][] notaDisciplina,
-			int mediaNotas) {
-		
-		this.nome = nome;
-		this.matricula = matricula;
-		this.curso = curso;
+		this.date = date;
 		this.disciplina = disciplina;
 		this.notaDisciplina = notaDisciplina;
 		this.mediaNotas = mediaNotas;
 	}
 
-	public String getNome() {
-		return nome;
+	public Date getDate() {
+		return date;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
-
-	public String getCurso() {
-		return curso;
-	}
-
-	public void setCurso(String curso) {
-		this.curso = curso;
+	public void setDate(Date date) {
+		this.date = date;
 	}
 
 	public String[] getDisciplina() {
@@ -66,31 +43,22 @@ public class Aluno {
 		this.notaDisciplina = notaDisciplina;
 	}
 
-	public int getMediaNotas() {
+	public Integer getMediaNotas() {
 		return mediaNotas;
 	}
 
-	public void setMediaNotas(int mediaNotas) {
+	public void setMediaNotas(Integer mediaNotas) {
 		this.mediaNotas = mediaNotas;
 	}
 
-//Imprimir dados na tela;
-	public void imprimirInfo() {
-		System.out.println("\nNome: " + this.getNome() 
-		+ ", Matricula: " + this.getMatricula() 
-		+ ", Curso: " + this.getCurso() + "\n");
-		
-		for (String d : this.disciplina) {
-			System.out.println("Disciplina(s): " + d + "\n");
-		}
-	}
 
 //Metódo calcula e imprime notas e retorna média de cada aluno;
 
-	public double imprimirMedia() {
+	public void imprimirMedia() {
+		
+		System.out.println();
 		
 		double media = 0;
-		System.out.println("Curso: " + this.getCurso());
 		
 		for (int i = 0; i < this.notaDisciplina.length; i++) {
 			
@@ -110,9 +78,6 @@ public class Aluno {
 			}
 			
 			System.out.println();
-		}
-
-		return media;
-		
+		}	
 	}
 }
