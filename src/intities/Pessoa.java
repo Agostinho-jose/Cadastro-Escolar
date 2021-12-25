@@ -1,7 +1,6 @@
 package intities;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
     public class Pessoa {
@@ -91,10 +90,10 @@ import java.util.List;
 
 	public void imprimirDiscpMedia() {
 		
-		Calendar cal = Calendar.getInstance();
+	
 		
 		for(Aluno al : alunos) {
-			cal.setTime(al.getDate());
+			
 			al.imprimirMedia();
 		}
 	}

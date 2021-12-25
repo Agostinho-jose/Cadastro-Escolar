@@ -1,6 +1,9 @@
 package intities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import model.exception.ExceptionEscolar;
 
 public class Aluno {
 
@@ -8,11 +11,15 @@ public class Aluno {
 	private String[] disciplina;
 	private double[][] notaDisciplina;
 	
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
 	//Atributos que recebe valor para divisão da média relacionado com quantidade de notas(quantNotas);
 	private Integer mediaNotas;
 	
 	public Aluno(Date date, String[] disciplina, double[][] notaDisciplina, Integer mediaNotas) {
-		super();
+		if(!this.date.equals(sdf.format(date))) {
+			throw new ExceptionEscolar("Formato invalido");
+		}
 		this.date = date;
 		this.disciplina = disciplina;
 		this.notaDisciplina = notaDisciplina;
@@ -57,6 +64,7 @@ public class Aluno {
 	public void imprimirMedia() {
 		
 		System.out.println();
+		System.out.println("Data: " + sdf.format(date));
 		
 		double media = 0;
 		
